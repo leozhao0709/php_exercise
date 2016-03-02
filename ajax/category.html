@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta name="keywords" content="keyword1,keyword2,keyword3">
+		<meta name="description" content="this is my page">
+		<meta name="Author" content="Lei Zhao">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+		<link rel="stylesheet" type="text/css" href="">
+		<style type = "text/css"></style>
+		<script type = "text/javascript" src="public.js"></script>
+
+		<script type="text/javascript">
+
+			window.onload = function(){
+				createKind();
+				$('c1').onchange=createKind2;
+			}
+
+			function createKind(){
+				$.post('category.php', 'cid=0', function(msg){
+					for (var i = 0; i < msg.length; i++) {
+						// msg[i].name
+						// msg[i].id
+
+						var op = new Option(msg[i].name, msg[i].id);//option实例
+						$('c1').options.add(op);
+					};
+				}, 'json');
+			}
+
+			function createKind2(){
+				$('c2').length = 0;
+				var cid=$('c1').value;
+				$.post('category.php', 'cid='+cid, function(msg){
+					for (var i = 0; i < msg.length; i++) {
+						var op= new Option(msg[i].name, msg[i].id);
+						$('c2').options.add(op);
+					};
+				}, 'json');
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<select id='c1'>
+			<option value = "-1">请选择</option>
+		</select>
+
+		<select id='c2'></select>
+	</body>
+</html>

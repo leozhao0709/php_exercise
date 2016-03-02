@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>在此处插入标题</title>
+<script language='javascript' src='../jquery/jquery-2.1.4.js'></script>
+</head>
+<body>
+	<script>
+		window.onload = function() {
+			//绑定点击事件
+			$("#btnOk")[0].onclick = function() {
+				//html
+				//alert($("#div1").html());
+				$('#div1').html('<font color=red>Smarty</font>');
+
+				//text
+				//alert($("#div2").text());
+				$('#div2').text('<font color=red>Linux</font>');
+
+				//val
+				//alert($("#content").val());
+				//$('#content').val('thinkphp');
+			};
+		}
+	</script>
+	<div id='div1'>jQuery</div>
+	<hr>
+	<div id='div2'>Ajax</div>
+	<hr>
+	<input type='text' id='content' />
+	<hr>
+	<input type='button' id='btnOk' value='确定' />
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta name="keywords" content="keyword1,keyword2,keyword3">
+		<meta name="description" content="this is my page">
+		<meta name="Author" content="Lei Zhao">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<link rel="stylesheet" type="text/css" href="">
+		<style type = "text/css"></style>
+		
+		<script type = "text/javascript" src="../ajax/public.js"></script>
+		<script type="text/javascript">
+			window.onload=function(){
+
+				// $('username').onblur=function(){
+				// 	var username = $('username').value;
+
+				// 	var url='demo04.php?username='+username+'&_=' + new Date().getTime();
+
+				// 	var xhr = new XMLHttpRequest();
+
+				// 	xhr.open('get', url);
+
+				// 	xhr.onreadystatechange=function(){
+				// 		if (xhr.readyState==4 && xhr.status==200) {
+				// 			$('result').innerHTML=xhr.responseText;
+				// 		};
+				// 	}
+
+				// 	xhr.send(null);				
+
+				// }
+				$('username').onblur=function(){
+					$.get('demo04.php', 'username='+$('username').value, function(msg) {
+					result.innerHTML=msg;
+				}, 'text')
+
+				}
+				
+
+
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<form>
+			用户:
+			<input type='text' id='username'>
+			<span id="result"></span><hr>
+			密码:
+			<input type='password' id='password'><hr>
+			确认:
+			<input type='password' id='password'><hr>
+			<input type='submit' name = 'submit' value='注册'>
+		</form>
+	</body>
+</html>

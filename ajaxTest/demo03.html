@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta name="keywords" content="keyword1,keyword2,keyword3">
+		<meta name="description" content="this is my page">
+		<meta name="Author" content="Lei Zhao">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<link rel="stylesheet" type="text/css" href="">
+		<style type = "text/css"></style>
+		<script type = "text/javascript" src="public.js"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				$('btnOk').onclick=function(){
+					var first=$('first').value;
+					var second=$('second').value;
+					var url='demo03.php?first='+first+'&second='+second;
+
+					var xhr = new XMLHttpRequest();
+
+					xhr.open('get',url);
+
+					xhr.onreadystatechange = function(){
+						if (xhr.readyState==4) {
+							if (xhr.status == 200) {
+								$('result').innerHTML = xhr.responseText;
+							}
+							else {
+								alert("请求页面不存在");
+							}
+							
+						};
+					}
+
+					xhr.send(null);
+				}
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<input type="text" id='first'><br>
+		<input type="text" id='second'><br>
+		<input type="button" id='btnOk' value='计算'><br>
+		<span id='result'></span>
+	</body>
+</html>

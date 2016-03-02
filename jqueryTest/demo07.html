@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>子元素</title>
+<script language='javascript' src='../jquery/jquery-2.1.4.js'></script>
+<script>
+	window.onload = function() {
+		document.getElementById('btnOk').onclick = function() {
+			
+			//匹配所有ol下索引为1的li
+			//$('ol li:nth-child(1)').html('西游记');
+			
+			//匹配所有ol下第一个li
+			//$('ol li:first-child').html('西游记');
+			
+			//匹配所有ol下最后一个li
+			//$('ol li:last-child').html('西游记');
+			
+			//如果li是ol下的唯一子元素，则匹配
+			$('ol li:only-child').html('西游记');
+		};
+	};
+</script>
+</head>
+<body>
+	<ol>
+		<li>三国</li>
+		<li>水浒</li>
+	</ol>
+
+	<ol>
+		<li>红楼梦</li>
+	</ol>
+	<hr>
+	<input type='button' id='btnOk' value='确定' />
+</body>
+</html>

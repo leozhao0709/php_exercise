@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta name="keywords" content="keyword1,keyword2,keyword3">
+		<meta name="description" content="this is my page">
+		<meta name="Author" content="Lei Zhao">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<link rel="stylesheet" type="text/css" href="">
+		<style type = "text/css">
+			tr{
+				background-color: white;
+				font-size: 12px;
+				height: 30px;
+			}
+
+			td{
+				text-align: center;
+			}
+		</style>
+		<script type = "text/javascript" src="../jquery/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript">
+			$().ready(function(){
+
+				$('#btnok').bind('click', function(){
+					var name=$('#name').val();
+					var price=$('#price').val();
+					var address=$('#address').val();
+
+					// alert($('table>tbody>tr').html());
+					$('#table').append($('#table tr:first').clone());
+					$('#table tr:last td:eq(0)').html(name);
+					$('#table tr:last td:eq(1)').html(price);
+					$('#table tr:last td:eq(2)').html(address);
+
+				})
+			})
+		</script>
+
+	</head>
+
+	<body>
+		<table id='table' width=800 cellspacing="1" bgcolor='#6699cc'>
+			<tbody>
+			<tr bgcolor='white'>
+				<td>商品</td>
+				<td>价格</td>
+				<td>产地</td>
+			</tr>
+			</tbody>
+		</table>
+		<hr>
+		<input type="text" id='name'/><hr>
+		<input type="text" name="" id="price"><hr>
+		<input type="text" name="" id="address"><hr>
+		<input type="button" value="确定" id="btnok">
+	</body>
+</html>

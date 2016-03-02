@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta name="keywords" content="keyword1,keyword2,keyword3">
+		<meta name="description" content="this is my page">
+		<meta name="Author" content="Lei Zhao">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<link rel="stylesheet" type="text/css" href="">
+		<style type = "text/css">
+			.cls1{
+				color: red;
+				font-size: 12px;
+			}
+
+		</style>
+		<script type = "text/javascript" src="../jquery/jquery-2.1.4.js"></script>
+
+		<script type="text/javascript">
+			window.onload = function(){
+				document.getElementById('btnOk').onclick = function(){
+					//匹配id为div1的元素
+					// $('#div1').html('测试');
+
+					//匹配所有div元素
+					// $('div').html('测试');
+
+					//匹配id=div1和所有p元素
+					// $('#div1, p').html('测试');
+
+					//匹配class=cls1的元素
+					$('.cls1').html('测试');
+
+
+
+				};
+			}
+			
+		</script>
+
+	</head>
+
+	<body>
+		<div id='div1'>test</div>
+		<div class='cls1'>test</div>
+		<div>test</div>
+		<p>test</p>
+		<p class='cls1'>test</p>
+		<hr>
+		<input type = "button" id='btnOk' value = '确定'>
+	</body>
+</html>

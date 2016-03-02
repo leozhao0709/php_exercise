@@ -1,0 +1,103 @@
+*{
+	margin: 0 auto;
+	padding: 0;
+}
+
+a {
+	color: #999999;
+	text-decoration: none;
+}
+a:link,a:visited, a:hover{
+	color: #FF9900;
+}
+a:active {
+	color: #CCCCCC;
+}
+
+
+ul, li{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+/*	border: 1px solid blue;*/
+	overflow: hidden;
+	vertical-align: top;
+/*	text-decoration: line-through;*/
+
+}
+
+li {
+	border: 1px solid #EABA06;
+	float: left;
+	width: 32%;
+	text-align: center;
+}
+
+
+.special{
+	width: 97%;
+/*	border: 1px solid red;*/
+	overflow: hidden;
+	margin: 0 0px 0 0;
+}
+.start{
+	float: left;
+}
+
+ .finishOrder{
+	float: right;
+}
+
+#body {
+	width: 422px;
+	margin: 10px auto;
+	vertical-align: top;
+	overflow: hidden;
+/*	border: 1px solid red;*/
+}
+#body h3 {
+
+	margin-top:30px;
+	margin-left:40px;
+	margin-bottom:15px;
+	text-align: center;
+}
+
+.lev{
+	width: 422px;
+	margin: 10px auto;
+	vertical-align: top;
+/*	border: 1px solid red;*/
+	overflow: hidden;
+}
+
+.lev textarea{
+	width: 400px;
+	height: 200px;
+	margin-top: 20px;
+	resize: none;
+	padding: 10px;
+}
+
+.lev .c1 {
+	width:50px;
+	height:28px;
+	margin:15px 30px 0 40px;
+}
+
+.lev .head{
+/*	border: 1px red solid;*/
+	text-align: center;
+}
+
+.lev .tableNum{
+	width: 30px;
+}
+
+.finish{
+	text-align: center;
+	width:50px;
+	height:28px;
+	margin:15px 10px 0 180px;
+}
+

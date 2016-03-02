@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>内容</title>
+<script language='javascript' src='../jquery/jquery-2.1.4.js'></script>
+<script>
+	window.onload = function() {
+		document.getElementById('btnOk').onclick = function() {
+
+			//匹配内容中包含“国”的所有li元素
+			//$("li:contains('国')").html('三国演义');
+
+			//匹配内容为空的所有li元素
+			//$('li:empty').html('红楼梦');
+
+			//匹配内容中包含a选择器的所有li元素
+			//$('li:has(a)').css('color', 'red');
+			
+			//匹配内容不为空的所有li元素
+			$("li:parent").html('测试');
+			
+			// $('li:not(li:empty)').html('红楼梦');
+		};
+	};
+</script>
+</head>
+<body>
+	<ol>
+		<li>三国</li>
+		<li>
+			西
+			<a>游</a>
+			记
+		</li>
+		<li></li>
+		<li>水浒传</li>
+	</ol>
+	<hr>
+	<input type='button' id='btnOk' value='确定' />
+</body>
+</html>

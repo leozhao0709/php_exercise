@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>例题</title>
+<script language='javascript' src='../jquery/jquery-2.1.4.js'></script>
+<script>
+	window.onload = function() {
+		$("td").html('&nbsp;');
+		document.getElementById('btnOk').onclick = function() {
+
+			//取出行数
+			var hang = $('#hang').val() - 1;
+			//取出列数
+			var lie = $('#lie').val() - 1;
+			//取出内容
+			var neirong = $('#neirong').val();
+
+			//生成选择器字符串
+			var str = "tr:eq(" + hang + ") > td:eq(" + lie + ")";
+			//alert(str)
+			//写入内容
+			$(str).html(neirong);
+			
+		};
+	};
+</script>
+</head>
+<body>
+	<table width=800 border=1>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<hr>
+	<input type='text' id='hang' />
+	<hr>
+	<input type='text' id='lie' />
+	<hr>
+	<input type='text' id='neirong' />
+	<hr>
+	<input type='button' id='btnOk' value='确定' />
+</body>
+</html>

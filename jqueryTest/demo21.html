@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta name="keywords" content="keyword1,keyword2,keyword3">
+		<meta name="description" content="this is my page">
+		<meta name="Author" content="Lei Zhao">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<link rel="stylesheet" type="text/css" href="">
+		<style type = "text/css">
+			div{
+				width: 500px;
+				height: 500px;
+				background-color: red
+			}
+		</style>
+		<script type = "text/javascript" src = "../jquery/jquery-2.1.4.js"></script>
+		<script type="text/javascript">
+			$().ready(function(){
+				$('#btn1').bind('click', function(){
+					$('div').slideDown(5000);
+				});
+
+				$('#btn2').bind('click', function(){
+					$('div').slideUp(5000, function(){
+						alert('动画已完成');
+					});
+				});
+
+				$('#btn3').bind('click', function(){
+					$('div').slideToggle(5000, function(){
+						alert('动画已完成');
+					});
+				});
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<div>
+			
+
+		</div>
+		<hr>
+		<input type="button" id='btn1' value='slideDown'/>
+		<input type="button" id='btn2' value='slideUp'/>
+		<input type="button" id='btn3' value='slideToggle'/>
+	</body>
+</html>

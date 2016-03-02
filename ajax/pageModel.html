@@ -1,0 +1,28 @@
+<table width=800 bgcolor='#6699cc' cellspacing='1'>
+	<tr>
+		<td>序号</td>
+		<td>分类名</td>
+		<td>分类描述</td>
+		<td>上级分类</td>
+	</tr>
+	{foreach from=$data item='value'}
+	<tr bgcolor='white'>
+		<td>{counter}</td>
+		<td>{$value['name']}</td>
+		<td>{$value['content']}</td>
+		<td>{$value['cid']}</td>
+	</tr>
+	{/foreach}
+	<tr>
+		<td colspan='4'>
+			共条{$count}数据
+			共{$pageCount}页
+			每页{$pageSize}条
+			当前第{$page}页
+			<a href="#" onclick="show(1)">第一页</a>
+			<a href="#" onclick="show({$pagePre})">上一页</a>
+			<a href="#" onclick="show({$pageNext})">下一页</a>
+			<a href="#" onclick="show({$pageCount})">最末页</a>
+		</td>
+	</tr>
+</table>

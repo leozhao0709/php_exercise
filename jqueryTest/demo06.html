@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>可见性</title>
+<script language='javascript' src='../jquery/jquery-2.1.4.js'></script>
+<script>
+	window.onload = function() {
+		document.getElementById('btnOk').onclick = function() {
+			
+			//匹配具有color属性的font元素
+			//$('font[color]').html('测试');
+			
+			//匹配color属性值为#ccccc5的font元素
+			//$("font[color='#ccccc5']").html('测试');
+			
+			//匹配color属性值不等于#ccccc5的font元素
+			//$("font[color!='#ccccc5']").html('测试');
+			
+			//匹配color属性值以#6开始的font的元素
+			//$("font[color^='#6']").html('测试');
+			
+			//匹配color属性值以5结束的font的元素
+			//$("font[color$='5']").html('测试');
+			
+			//匹配color属性值中包含6的font的元素
+			//$("font[color*='6']").html('测试');
+			
+			//匹配具有color和size属性的font元素
+			$('font[color][size]').html('测试');
+		};
+	};
+</script>
+</head>
+<body>
+	<font>test1</font>
+	<hr>
+	<font size='4'>test2</font>
+	<hr>
+	<font color='#ccccc5'>test3</font>
+	<hr>
+	<font color='#66aa45'>test4</font>
+	<hr>
+	<font color='#62bb71' size='3'>test5</font>
+	<hr>
+	<input type='button' id='btnOk' value='确定' />
+</body>
+</html>

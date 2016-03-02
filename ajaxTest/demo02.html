@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta name="keywords" content="keyword1,keyword2,keyword3">
+		<meta name="description" content="this is my page">
+		<meta name="Author" content="Lei Zhao">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<link rel="stylesheet" type="text/css" href="">
+		<style type = "text/css"></style>
+		<script type="text/javascript" src = "public.js"></script>
+		<script type = "text/javascript">
+			window.onload = function() {
+				$('btnOk').onclick = function() {
+					var xhr = createXHR();
+
+					//初始化Ajax对象
+					xhr.open('get', 'demo02.php');
+
+					//Ajax对象的状态吗发生改变时会自动执行的回调函数
+					xhr.onreadystatechange = function() {
+						// alert(xhr.readyState);
+						if (xhr.readyState == 4) {
+							alert(xhr.responseText);
+						};
+					};
+
+					//发送ajax请求
+					xhr.send(null);
+				}
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<input type="button" id='btnOk' value = '确定'>
+	</body>
+</html>

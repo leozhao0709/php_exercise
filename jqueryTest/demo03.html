@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>简单</title>
+<script language='javascript' src='../jquery/jquery-2.1.4.js'></script>
+<script>
+	window.onload = function() {
+		document.getElementById('btnOk').onclick = function() {
+			
+			//匹配第一个td元素
+			//$('td:first').html('测试');
+			
+			//匹配最后一个td元素
+			//$('td:last').html('测试');
+			
+			//匹配索引为偶数的td元素
+			//$('td:even').html('测试');
+			
+			//匹配索引为奇数的td元素
+			//$('td:odd').html('测试');
+			
+			//匹配索引为4的td元素
+			// $('td:eq(4)').html('测试');
+			
+			//匹配索引大于4的td元素
+			$('td:gt(4)').html('测试');
+			
+			//匹配索引小于4的td元素
+			//$('td:lt(4)').html('测试');
+			
+			//匹配除了索引为4的所有td元素
+			// $('td:not(td:eq(4))').html('测试');
+		};
+	};
+</script>
+</head>
+<body>
+	<table width=800 border=1>
+		<tr>
+			<td>a</td>
+			<td>b</td>
+			<td>c</td>
+			<td>d</td>
+			<td>e</td>
+			<td>f</td>
+			<td>g</td>
+			<td>h</td>
+		</tr>
+	</table>
+	<hr>
+	<input type='button' id='btnOk' value='确定' />
+</body>
+</html>

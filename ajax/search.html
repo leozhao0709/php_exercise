@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta name="keywords" content="keyword1,keyword2,keyword3">
+		<meta name="description" content="this is my page">
+		<meta name="Author" content="Lei Zhao">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<link rel="stylesheet" type="text/css" href="">
+		<style type = "text/css">
+			#result{
+				width: 500px;
+				height: auto;
+				border: 1px outset #cccccc;
+				display: none;
+			}
+
+			#content{
+				width: 500px;
+			}
+		</style>
+		<script type = "text/javascript" src="public.js"></script>
+		<script type="text/javascript">
+
+			window.onload=function(){
+				$('content').onkeyup=display;
+			}
+
+			function display(){
+				var content = $('content').value;
+
+				if (content == '') {
+					$('result').style.display = "none";
+					return
+				};
+
+				$('result').innerHTML = '';
+				
+				$.post('search.php', 'content='+content, function(msg){
+					if (msg.length>0) {
+						$('result').style.display = "block";
+					} else{
+						$('result').style.display = "none";
+					}
+					for (var i = 0; i < msg.length; i++) {
+						var div=document.createElement('div');
+						div.innerHTML=msg[i].name;
+						// $('result').innerHTML += msg[i].name + '<br>';
+						div.onmousemove=function(){
+							this.style.backgroundColor = '#B3D8FD';
+						}
+						div.onmouseout=function(){
+							this.style.backgroundColor = 'white';
+						}
+						div.onclick=function(){
+							$('content').value=this.innerHTML;
+							$('result').style.display="none";
+						}
+						$('result').appendChild(div)
+					};
+				}, 'json')
+			}
+		</script>
+
+	</head>
+
+	<body>
+			<input type='text' id='content'>
+			<div id= 'result'></div>
+	</body>
+</html>

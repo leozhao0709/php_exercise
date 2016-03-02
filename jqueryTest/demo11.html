@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>在此处插入标题</title>
+<script language='javascript' src='../jquery/jquery-2.1.4.js'></script>
+</head>
+<body>
+	<script>
+		window.onload = function() {
+
+			//获取dom对象的方式
+			var content = document.getElementById('content');
+			alert(content);
+
+			//获取jQuery对象的方式
+			//var content=$('div');
+			//alert(content);
+
+			//content---->jQuery对象
+			//var content = $('div');
+			//content[1]----->dom对象
+			//content[1].innerHTML = '测试';
+			//content.get(0)----->dom对象
+			//content.get(0).innerHTML='测试';
+
+			//content----->dom对象
+			// var content = document.getElementById('content');
+			// //$(content)------>jQuery对象
+			// $(content).html('display');
+		}
+	</script>
+	<div id='content'>test</div>
+	<div>div2</div>
+	<div>div3</div>
+	<input type='checkbox' checked='checked' />
+</body>
+</html>
